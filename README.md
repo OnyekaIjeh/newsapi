@@ -2,6 +2,8 @@
 
 > A Vue.js project
 
+Access the demo at https://newsapi-you.netlify.com/
+
 ## Build Setup
 
 ``` bash
