@@ -3,7 +3,6 @@
     <div class="brand">
       <h1 class="brand__name">
         <span class="darkslategrey">NEWS</span>FLASH
-        <span class="point"></span>
       </h1>
       <app-search></app-search>
     </div>
@@ -50,14 +49,6 @@ export default {
 }
 .darkslategrey {
   color: #6ba3ba;
-}
-.point {
-  display: inline-block;
-  background-color: black;
-  width: 20px;
-  height: 20px;
-  vertical-align: baseline;
-  margin-left: -12px;
 }
 
 .brand {

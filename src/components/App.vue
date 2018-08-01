@@ -7,6 +7,7 @@
     </div>
     <div v-show="loading" class="loading">Loading...</div>
     <error v-if="error"></error>
+    <a href="#app" class="top">Back to top</a>
   </div>
 
 </template>
@@ -34,6 +35,11 @@ export default {
 </script>
 
 <style scoped>
+.top {
+  position: fixed;
+  bottom: 5px;
+  right: 5px;
+}
 /* Absolute Center Spinner */
 .loading {
   position: fixed;

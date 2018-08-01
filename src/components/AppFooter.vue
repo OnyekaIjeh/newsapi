@@ -1,7 +1,8 @@
 <template>
   <div class="wrapper">
-    <p class="footer__name">Onyeka Ijeh</p>
-    <a href="http://newsapi.org" class="link">Powered by newsapi.org</a>
+    <p class="footer__name">Onyeka Ijeh |
+      <a href="http://newsapi.org" class="link">Powered by newsapi.org</a>
+    </p>
   </div>
 </template>
 
@@ -13,10 +14,6 @@ export default {
 
 <style scoped>
 .wrapper {
-  display: grid;
-  grid-auto-flow: column;
-  align-items: center;
-  grid-template-columns: 1fr;
   margin: 50px 40px 20px 40px;
   border-top: 1px solid grey;
   padding-top: 2%;
