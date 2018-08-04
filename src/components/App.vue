@@ -7,7 +7,7 @@
     </div>
     <div v-show="loading" class="loading">Loading...</div>
     <error v-if="error"></error>
-    <a href="#app" class="top">Back to top</a>
+    <a href="#app" class="backtotop">Back to top</a>
   </div>
 
 </template>
@@ -38,16 +38,64 @@ export default {
 #app {
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
     'Lucida Sans', Arial, sans-serif;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 80%;
+  position: relative;
 }
-.top {
+.container {
+  position: relative;
+  min-height: 100vh;
+  padding-bottom: 100px;
+}
+.backtotop {
   position: fixed;
   bottom: 0;
+  left: 0;
   right: 0;
   padding: 5px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100px;
+  text-align: center;
   background-color: darkslategray;
   color: white;
   text-decoration: none;
   border-radius: 3px;
+}
+.storylist {
+  margin-bottom: 50px;
+}
+
+.title {
+  color: lightgray;
+  font-size: 15px;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
+    'Lucida Sans', Arial, sans-serif;
+  font-style: italic;
+  text-align: center;
+  margin-top: 25px;
+  font-weight: lighter;
+}
+
+.button {
+  border: 1px solid black;
+  background: transparent;
+  padding: 10px 7px;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
+    'Lucida Sans', Arial, sans-serif;
+  color: black;
+}
+.button:hover {
+  background-color: black;
+  color: white;
+  cursor: pointer;
+}
+.buttons {
+  display: grid;
+  grid-auto-flow: column;
+  justify-content: space-around;
+  margin-top: 10%;
 }
 /* Absolute Center Spinner */
 .loading {

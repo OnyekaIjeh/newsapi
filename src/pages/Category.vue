@@ -1,7 +1,7 @@
 <template>
   <div class="storylist">
     <h1 class="title">Stories for
-      <em>{{query}}</em>
+      <em>{{category}}</em>
     </h1>
     <template v-if="stories">
       <div v-for="(story, index) in stories" :key="index">
@@ -17,37 +17,36 @@
 
 <script>
 export default {
-  name: 'search',
-  props: ['query'],
+  name: 'category',
+  props: ['category'],
   data() {
     return {
       page: 1,
     }
   },
-
   created() {
-    this.getSearch()
+    this.getCategory()
   },
   beforeRouteUpdate (to, from, next) {
-    this.$store.dispatch('getSearch', {page: 1, query: to.params.query})
+    this.$store.dispatch('getCategory', {page: 1, category: to.params.category})
     next()
   },
   methods: {
-    getSearch() {
-      this.$store.dispatch('getSearch', {page: this.page, query: encodeURIComponent(this.query)})
+    getCategory() {
+      this.$store.dispatch('getCategory', {page: this.page, category: this.category})
     },
     getPrev() {
       this.page--
-      this.getSearch()
+      this.getCategory()
     },
     getNext() {
       this.page++
-      this.getSearch()
+      this.getCategory()
     }
   },
   computed: {
     stories() {
-      return this.$store.getters.search
+      return this.$store.getters.category
     },
     disabled() {
       return (this.page == 1)

@@ -1,8 +1,7 @@
 <template>
   <div class="story">
-    <img :src="story.urlToImage" :alt="story.title" class="story__image">
     <a :href="story.url" class="title__text">
-      {{story.title}}
+      <img :src="story.urlToImage" class="story__image"> {{story.title}}
     </a>
     <p class="news__source">{{story.source.name}}</p>
   </div>
@@ -18,7 +17,7 @@ export default {
 <style scoped>
 .story {
   margin-top: 10px;
-  width: 60%;
+  width: 70%;
   margin-left: auto;
   margin-right: auto;
   height: 100%;
@@ -28,7 +27,7 @@ export default {
 
 .story__image {
   width: 100%;
-  height: 100%;
+  max-height: 400px;
 }
 
 .title__text {

@@ -13,12 +13,16 @@ export default {
 
 <style scoped>
 .wrapper {
-  margin: 50px 40px 20px 40px;
+  margin: 50px 0 0 0;
   border-top: 1px solid grey;
   padding-top: 2%;
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
     'Lucida Sans', Arial, sans-serif;
   color: darkslategray;
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  height: 100px;
 }
 .footer__name {
   float: left;
@@ -28,5 +32,8 @@ export default {
   float: right;
   max-width: 50%;
   text-align: right;
+  text-decoration: none;
+  font-size: 12px;
+  color: darkslategray;
 }
 </style>
