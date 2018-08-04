@@ -10,10 +10,15 @@
 </template>
 
 <script>
+import store from '../store'
 export default {
   name: 'home',
-  created() {
-    this.$store.dispatch('getHeadlines')
+  beforeRouteEnter(to, from, next) {
+    store.dispatch('getHeadlines').then(() => {
+      next()
+    }).catch(() => {
+      next(false)
+    })
   },
   computed: {
     headlines() {

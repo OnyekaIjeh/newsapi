@@ -16,6 +16,7 @@
 </template>
 
 <script>
+import store from '../store'
 export default {
   name: 'category',
   props: ['category'],
@@ -24,12 +25,29 @@ export default {
       page: 1,
     }
   },
-  created() {
-    this.getCategory()
+  beforeRouteEnter (to, from, next) {
+    if(['general', 'business', 'sports', 'health', 'entertainment', 'technology'].includes(to.params.category)) {
+       store.dispatch('getCategory', {page: 1, category: to.params.category}).then(() => {
+        next()
+      }).catch(() => {
+        next(false)
+      })
+    } else {
+      store.state.error = true
+      next('/')
+    }
   },
   beforeRouteUpdate (to, from, next) {
-    this.$store.dispatch('getCategory', {page: 1, category: to.params.category})
-    next()
+    if(['general', 'business', 'sports', 'health', 'entertainment', 'technology'].includes(to.params.category)) {
+       store.dispatch('getCategory', {page: 1, category: to.params.category}).then(() => {
+        next()
+      }).catch(() => {
+        next(false)
+      })
+    } else {
+      store.state.error = true
+      next('/')
+    }
   },
   methods: {
     getCategory() {

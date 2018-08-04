@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 import Axios from 'axios'
+import { resolve } from 'url'
 
 const Request = Axios.create({
   baseURL: 'https://newsapi.org/v2/',
@@ -31,56 +32,65 @@ export default new Vuex.Store({
   },
   actions: {
     getHeadlines({ commit, state }) {
-      state.headlines = ''
       state.loading = true
       state.error = ''
-      Request({
-        url: 'top-headlines?language=en&country=ng'
+      return new Promise((resolve, reject) => {
+        Request({
+          url: 'top-headlines?language=en&country=ng'
+        })
+          .then(data => {
+            state.loading = false
+            commit('setHeadlines', data.data.articles)
+            resolve()
+          })
+          .catch(error => {
+            state.loading = false
+            state.error = error
+            reject()
+          })
       })
-        .then(data => {
-          state.loading = false
-          commit('setHeadlines', data.data.articles)
-        })
-        .catch(error => {
-          state.loading = false
-          state.error = error
-        })
     },
     getCategory({ commit, state }, payload) {
-      state.category = ''
       state.loading = true
       state.error = ''
-      Request({
-        url: `everything?q=${payload.category}&sortBy=relevancy&page=${
-          payload.page
-        }&language=en&pageSize=5`
+      return new Promise((resolve, reject) => {
+        Request({
+          url: `everything?q=${payload.category}&sortBy=relevancy&page=${
+            payload.page
+          }&language=en&pageSize=5`
+        })
+          .then(data => {
+            state.loading = false
+            commit('setCategory', data.data.articles)
+            resolve()
+          })
+          .catch(error => {
+            state.loading = false
+            state.error = error
+            reject()
+          })
       })
-        .then(data => {
-          state.loading = false
-          commit('setCategory', data.data.articles)
-        })
-        .catch(error => {
-          state.loading = false
-          state.error = error
-        })
     },
     getSearch({ commit, state }, payload) {
-      state.search = ''
       state.loading = true
       state.error = ''
-      Request({
-        url: `everything?q=${payload.query}&sortBy=relevancy&page=${
-          payload.page
-        }&language=en&pageSize=5`
+      return new Promise((resolve, reject) => {
+        Request({
+          url: `everything?q=${payload.query}&sortBy=relevancy&page=${
+            payload.page
+          }&language=en&pageSize=5`
+        })
+          .then(data => {
+            state.loading = false
+            commit('setSearch', data.data.articles)
+            resolve()
+          })
+          .catch(error => {
+            state.loading = false
+            state.error = error
+            reject()
+          })
       })
-        .then(data => {
-          state.loading = false
-          commit('setSearch', data.data.articles)
-        })
-        .catch(error => {
-          state.loading = false
-          state.error = error
-        })
     }
   },
   getters: {

@@ -16,6 +16,7 @@
 </template>
 
 <script>
+import store from '../store'
 export default {
   name: 'search',
   props: ['query'],
@@ -24,13 +25,19 @@ export default {
       page: 1,
     }
   },
-
-  created() {
-    this.getSearch()
+  beforeRouteEnter (to, from, next) {
+      store.dispatch('getSearch', {page: 1, query: encodeURIComponent(to.params.query)}).then(() => {
+        next()
+      }).catch(() => {
+        next(false)
+      })
   },
   beforeRouteUpdate (to, from, next) {
-    this.$store.dispatch('getSearch', {page: 1, query: to.params.query})
-    next()
+    this.$store.dispatch('getSearch', {page: 1, query: encodeURIComponent(to.params.query)}).then(() => {
+        next()
+      }).catch(() => {
+        next(false)
+      })
   },
   methods: {
     getSearch() {
