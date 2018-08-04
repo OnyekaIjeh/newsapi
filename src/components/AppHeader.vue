@@ -102,6 +102,7 @@ export default {
     align-items: center;
     justify-content: space-around;
     justify-items: center;
+    grid-gap: 20px;
   }
   .brand__name {
     font-size: 40px;
