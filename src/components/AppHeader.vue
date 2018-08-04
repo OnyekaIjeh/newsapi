@@ -62,6 +62,10 @@ export default {
 }
 .nav__links {
   margin-top: 5%;
+  text-align: center;
+  white-space: nowrap;
+  overflow: auto;
+  overflow-y: hidden;
 }
 .nav__link {
   display: inline-block;
@@ -69,11 +73,13 @@ export default {
   margin: 10px;
   padding: 5px;
   color: darkslategray;
+  text-align: center;
 }
 .router__link {
   text-decoration: none;
   text-transform: uppercase;
   color: darkslategray;
+  text-align: center;
 }
 .router-link-exact-active {
   border-bottom: 1px solid #6ba3ba;
