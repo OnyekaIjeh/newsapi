@@ -1,8 +1,7 @@
 <template>
   <div class="wrapper">
-    <p class="footer__name">Onyeka Ijeh |
-      <a href="http://newsapi.org" class="link">Powered by newsapi.org</a>
-    </p>
+    <p class="footer__name">Onyeka Ijeh</p>
+    <a href="http://newsapi.org" class="link">Powered by newsapi.org</a>
   </div>
 </template>
 
@@ -20,5 +19,14 @@ export default {
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
     'Lucida Sans', Arial, sans-serif;
   color: darkslategray;
+}
+.footer__name {
+  float: left;
+  max-width: 50%;
+}
+.link {
+  float: right;
+  max-width: 50%;
+  text-align: right;
 }
 </style>

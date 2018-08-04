@@ -66,6 +66,7 @@ export default {
   white-space: nowrap;
   overflow: auto;
   overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
 }
 .nav__link {
   display: inline-block;

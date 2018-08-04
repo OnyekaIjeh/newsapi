@@ -34,11 +34,20 @@ export default {
 }
 </script>
 
-<style scoped>
+<style>
+#app {
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
+    'Lucida Sans', Arial, sans-serif;
+}
 .top {
   position: fixed;
-  bottom: 5px;
-  right: 5px;
+  bottom: 0;
+  right: 0;
+  padding: 5px;
+  background-color: darkslategray;
+  color: white;
+  text-decoration: none;
+  border-radius: 3px;
 }
 /* Absolute Center Spinner */
 .loading {
