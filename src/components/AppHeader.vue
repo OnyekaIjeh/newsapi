@@ -47,8 +47,6 @@ export default {
 .header {
   color: black;
   margin: 50px 0 0 0;
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
-    'Lucida Sans', Arial, sans-serif;
   width: 100%;
 }
 .darkslategrey {

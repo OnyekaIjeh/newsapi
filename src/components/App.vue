@@ -40,7 +40,10 @@ export default {
       document.documentElement.scrollTop = 0 // For Chrome, Firefox, IE and Opera
     },
     handleScroll() {
-      if (document.body.scrollTop > 40 || document.documentElement.scrollTop > 40) {
+      setTimeout(this.handleShowButton, 2000)
+    },
+    handleShowButton() {
+       if (document.body.scrollTop > 40 || document.documentElement.scrollTop > 40) {
         this.showScrollToTopButton = true
       } else {
       this.showScrollToTopButton = false
@@ -96,8 +99,6 @@ export default {
 .title {
   color: lightgray;
   font-size: 15px;
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
-    'Lucida Sans', Arial, sans-serif;
   font-style: italic;
   text-align: center;
   margin-top: 25px;
@@ -108,14 +109,15 @@ export default {
   border: 1px solid black;
   background: transparent;
   padding: 10px 7px;
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
-    'Lucida Sans', Arial, sans-serif;
   color: black;
 }
 .button:hover {
-  background-color: black;
-  color: white;
   cursor: pointer;
+}
+.button:disabled {
+  border: 1px solid grey;
+  color: grey;
+  cursor: not-allowed;
 }
 .buttons {
   display: grid;

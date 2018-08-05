@@ -16,8 +16,6 @@ export default {
   margin: 50px 0 0 0;
   border-top: 1px solid grey;
   padding-top: 2%;
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
-    'Lucida Sans', Arial, sans-serif;
   color: darkslategray;
   position: absolute;
   width: 100%;

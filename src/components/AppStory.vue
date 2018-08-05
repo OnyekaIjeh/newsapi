@@ -21,7 +21,6 @@ export default {
   margin-left: auto;
   margin-right: auto;
   height: 100%;
-  font-family: Trebuchet MS;
   margin-bottom: 50px;
 }
 
