@@ -7,7 +7,7 @@
     </div>
     <div v-show="loading" class="loading">Loading...</div>
     <error v-if="error"></error>
-    <a href="#app" class="backtotop">Back to top</a>
+    <button v-show="showScrollToTopButton" @click.prevent="scrollToTop" class="backtotop">Back to top</button>
   </div>
 
 </template>
@@ -22,6 +22,30 @@ export default {
   components: {
     AppHeader,
     AppFooter
+  },
+  data () {
+    return {
+      showScrollToTopButton: false
+    }
+  },
+  created() {
+    window.addEventListener('scroll', this.handleScroll)
+  },
+  destroyed() {
+    window.removeEventListener('scroll', this.handleScroll)
+  },
+  methods: {
+    scrollToTop() {
+      document.body.scrollTop = 0 // For Safari
+      document.documentElement.scrollTop = 0 // For Chrome, Firefox, IE and Opera
+    },
+    handleScroll() {
+      if (document.body.scrollTop > 40 || document.documentElement.scrollTop > 40) {
+        this.showScrollToTopButton = true
+      } else {
+      this.showScrollToTopButton = false
+      }
+    }
   },
   computed: {
     loading() {
@@ -50,18 +74,20 @@ export default {
 }
 .backtotop {
   position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  padding: 5px;
+  bottom: 12px;
+  right: 12px;
   margin-left: auto;
   margin-right: auto;
-  width: 100px;
+  font-size: 12px;
+  padding: 10px;
   text-align: center;
   background-color: darkslategray;
   color: white;
   text-decoration: none;
   border-radius: 3px;
+  outline: 0;
+  border: 0;
+  z-index: 99;
 }
 .storylist {
   margin-bottom: 50px;
