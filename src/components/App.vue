@@ -40,7 +40,7 @@ export default {
       document.documentElement.scrollTop = 0 // For Chrome, Firefox, IE and Opera
     },
     handleScroll() {
-      setTimeout(this.handleShowButton, 2000)
+      setTimeout(this.handleShowButton, 1000)
     },
     handleShowButton() {
        if (document.body.scrollTop > 40 || document.documentElement.scrollTop > 40) {

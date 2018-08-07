@@ -55,9 +55,9 @@ export default new Vuex.Store({
       state.error = ''
       return new Promise((resolve, reject) => {
         Request({
-          url: `everything?q=${payload.category}&sortBy=relevancy&page=${
-            payload.page
-          }&language=en&pageSize=5`
+          url: `top-headlines?country=ng&category=${
+            payload.category
+          }&sortBy=relevancy&pageSize=5&language=en&page=${payload.page}`
         })
           .then(data => {
             state.loading = false
