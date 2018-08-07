@@ -11,9 +11,6 @@
         <router-link to="/" class="router__link">Home</router-link>
       </li>
       <li class="nav__link">
-        <router-link to="/category/general" class="router__link">General</router-link>
-      </li>
-      <li class="nav__link">
         <router-link to="/category/business" class="router__link">Business</router-link>
       </li>
       <li class="nav__link">
