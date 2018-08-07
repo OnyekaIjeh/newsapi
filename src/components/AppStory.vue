@@ -1,6 +1,6 @@
 <template>
   <div class="story">
-    <a :href="story.url" class="title__text">
+    <a :href="story.url" class="title__text" target="__blank">
       <img :src="placeholderImage || story.urlToImage" class="story__image" @error="loadPlaceholderImage"> {{story.title}}
     </a>
     <p class="news__source">{{story.source.name}}</p>

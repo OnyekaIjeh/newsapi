@@ -5,6 +5,9 @@
       <div v-for="(story, index) in headlines" :key="index">
         <app-story :story="story"></app-story>
       </div>
+      <router-link to="/category/general" class="button button__home" tag="button">
+        Click for More
+      </router-link>
     </div>
   </div>
 </template>
@@ -29,6 +32,13 @@ export default {
 </script>
 
 <style scoped>
+.button__home {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100px;
+  margin-bottom: 20px;
+}
 .title {
   color: lightgray;
   font-size: 15px;
