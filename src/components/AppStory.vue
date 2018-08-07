@@ -1,7 +1,7 @@
 <template>
   <div class="story">
     <a :href="story.url" class="title__text">
-      <img :src="story.urlToImage" class="story__image"> {{story.title}}
+      <img :src="placeholderImage || story.urlToImage" class="story__image" @error="loadPlaceholderImage"> {{story.title}}
     </a>
     <p class="news__source">{{story.source.name}}</p>
   </div>
@@ -10,7 +10,17 @@
 <script>
 export default {
   name: 'appstory',
-  props: ['story']
+  props: ['story'],
+  data() {
+    return {
+      placeholderImage: false
+    }
+  },
+  methods: {
+    loadPlaceholderImage() {
+      this.placeholderImage = '../src/assets/image_unavailable.png'
+    }
+  }
 }
 </script>
 
