@@ -56,7 +56,7 @@ export default new Vuex.Store({
         Request({
           url: `top-headlines?country=ng&category=${
             payload.category
-          }&sortBy=relevancy&pageSize=5&language=en&page=${payload.page}`
+          }&sortBy=relevancy&pageSize=10&language=en&page=${payload.page}`
         })
           .then(data => {
             state.loading = false
@@ -77,7 +77,7 @@ export default new Vuex.Store({
         Request({
           url: `everything?q=${payload.query}&sortBy=relevancy&page=${
             payload.page
-          }&language=en&pageSize=5`
+          }&language=en&pageSize=10`
         })
           .then(data => {
             state.loading = false
