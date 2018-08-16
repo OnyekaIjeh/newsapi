@@ -17,6 +17,7 @@
 
 <script>
 import store from '../store'
+import categories from '../categories'
 export default {
   name: 'category',
   props: ['category'],
@@ -26,7 +27,7 @@ export default {
     }
   },
   beforeRouteEnter (to, from, next) {
-    if(['general', 'business', 'sports', 'health', 'entertainment', 'technology'].includes(to.params.category)) {
+    if(categories.includes(to.params.category)) {
        store.dispatch('getCategory', {page: 1, category: to.params.category}).then(() => {
         next()
       }).catch(() => {
@@ -38,7 +39,7 @@ export default {
     }
   },
   beforeRouteUpdate (to, from, next) {
-    if(['general', 'business', 'sports', 'health', 'entertainment', 'technology'].includes(to.params.category)) {
+    if(categories.includes(to.params.category)) {
        store.dispatch('getCategory', {page: 1, category: to.params.category}).then(() => {
         next()
       }).catch(() => {

@@ -1,7 +1,6 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 import Axios from 'axios'
-import { resolve } from 'url'
 
 const Request = Axios.create({
   baseURL: 'https://newsapi.org/v2/',

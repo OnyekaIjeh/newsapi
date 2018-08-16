@@ -5,9 +5,6 @@
       <div v-for="(story, index) in headlines" :key="index">
         <app-story :story="story"></app-story>
       </div>
-      <router-link to="/category/general" class="button button__home" tag="button">
-        Click for More
-      </router-link>
     </div>
   </div>
 </template>

@@ -25,6 +25,7 @@ export default {
 .footer__name {
   float: left;
   max-width: 50%;
+  font-size: 12px;
 }
 .link {
   float: right;
